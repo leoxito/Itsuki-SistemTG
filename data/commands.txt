@@ -1,0 +1,9 @@
+start - Inicia la conversación con Itsuki
+help - Muestra todos los comandos disponibles
+itsuki - Información completa sobre Itsuki
+personalidad - La personalidad de Itsuki
+comida - La comida favorita de Itsuki
+frase - Una frase aleatoria de Itsuki
+hobby - Pasatiempos favoritos de Itsuki
+estudio - El sueño de Itsuki de ser profesora
+estado - Tu estado de amistad con Itsuki
