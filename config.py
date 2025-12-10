@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Config:
-    BOT_TOKEN = os.getenv("8569171281:AAEpO-gN-djiSZVzkz_6pUXr-oQnQnwcs_Q")
-    ADMIN_ID = int(os.getenv("8362904205", 0))
+    BOT_TOKEN = os.getenv("BOT_TOKEN")
+    ADMIN_ID = int(os.getenv("ADMIN_ID", 0))
     
     # Información de Itsuki Nakano
     ITSUKI_INFO = {
