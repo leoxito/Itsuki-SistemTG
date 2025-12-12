@@ -1,47 +1,43 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-
-# URLs oficiales actualizadas (¡esto es lo principal que debes cambiar!)
-WHATSAPP_CHANNEL_URL = "https://whatsapp.com/channel/0029VbBBXTr5fM5flFaxsO06"
-TELEGRAM_BOT_URL = "https://t.me/ItsukiNew_bot"  # ⬅️ ¡URL CORREGIDA AQUÍ!
+from config import Config
 
 def get_main_menu():
-    """Teclado principal del bot simplificado"""
+    """Teclado principal del bot"""
     keyboard = [
-        [InlineKeyboardButton("🎵 /play", callback_data="play_music")],
-        [InlineKeyboardButton("🎀 Itsuki Info", callback_data="itsuki_info")],
-        [InlineKeyboardButton("📢 Canal Oficial", url=WHATSAPP_CHANNEL_URL)],
-        [InlineKeyboardButton("🤖 Bot Oficial", url=TELEGRAM_BOT_URL)]  # ← Usa la variable
+        [
+            InlineKeyboardButton(f"{Config.ITSUKI_INFO['emoji']} Sobre Itsuki", callback_data="itsuki_info"),
+            InlineKeyboardButton("🎭 Personalidad", callback_data="personality")
+        ],
+        [
+            InlineKeyboardButton("🍜 Comida Favorita", callback_data="food"),
+            InlineKeyboardButton("🎨 Pasatiempos", callback_data="hobby")
+        ],
+        [
+            InlineKeyboardButton("🏫 Mi Sueño", callback_data="study"),
+            InlineKeyboardButton("💭 Frase Aleatoria", callback_data="quote")
+        ],
+        [
+            InlineKeyboardButton("📚 Ayuda", callback_data="help_command"),
+            InlineKeyboardButton("🎀 Estado", callback_data="user_status")
+        ]
     ]
     return InlineKeyboardMarkup(keyboard)
 
 def get_itsuki_menu():
-    """Menú de información de Itsuki simplificado"""
-    keyboard = [
-        [InlineKeyboardButton("🎵 Volver a /play", callback_data="play_music")],
-        [InlineKeyboardButton("📢 Canal Oficial", url=WHATSAPP_CHANNEL_URL)],
-        [InlineKeyboardButton("🤖 Bot Oficial", url=TELEGRAM_BOT_URL)]  # ← Usa la variable
-    ]
-    return InlineKeyboardMarkup(keyboard)
-
-def get_play_menu():
-    """Menú específico para /play"""
-    keyboard = [
-        [InlineKeyboardButton("🎀 Itsuki Info", callback_data="itsuki_info")],
-        [InlineKeyboardButton("📢 Canal Oficial", url=WHATSAPP_CHANNEL_URL)],
-        [InlineKeyboardButton("🤖 Bot Oficial", url=TELEGRAM_BOT_URL)]  # ← Usa la variable
-    ]
-    return InlineKeyboardMarkup(keyboard)
-
-def get_simple_menu():
-    """Menú simple para mensajes"""
+    """Menú específico de Itsuki"""
     keyboard = [
         [
-            InlineKeyboardButton("🎵 /play", callback_data="play_music"),
-            InlineKeyboardButton("🎀 Info", callback_data="itsuki_info")
+            InlineKeyboardButton("🎭 Mi Personalidad", callback_data="personality"),
+            InlineKeyboardButton("🍜 Mi Comida", callback_data="food")
         ],
         [
-            InlineKeyboardButton("📢 Canal", url=WHATSAPP_CHANNEL_URL),
-            InlineKeyboardButton("🤖 Bot", url=TELEGRAM_BOT_URL)  # ← Usa la variable
-        ]
+            InlineKeyboardButton("🎨 Mis Hobbies", callback_data="hobby"),
+            InlineKeyboardButton("🏫 Mi Sueño", callback_data="study")
+        ],
+        [
+            InlineKeyboardButton("💭 Una de mis Frases", callback_data="quote"),
+            InlineKeyboardButton("📚 Consejos", callback_data="study_tips")
+        ],
+        [InlineKeyboardButton("🔙 Menú Principal", callback_data="main_menu")]
     ]
     return InlineKeyboardMarkup(keyboard)
